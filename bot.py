@@ -15,7 +15,7 @@ START_BUTTONS=[
         InlineKeyboardButton('- ملفات السورس .', url='https://github.com/Devmhmd/TikTokDL'),
         InlineKeyboardButton('- قناة السورس .', url='https://t.me/APP_YOUTUBE'),
     ],
-    [InlineKeyboardButton('- المطور .', url='https://t.me/APP_YOUTUBE')],
+    [InlineKeyboardButton('- المطور .', url='https://t.me/VR_LA')],
 ]
 
 DL_BUTTONS=[
