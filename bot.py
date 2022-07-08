@@ -12,18 +12,18 @@ downloads = './downloads/{}/'
 #Button
 START_BUTTONS=[
     [
-        InlineKeyboardButton('Source', url='https://github.com/X-Gorn/TikTokDL'),
-        InlineKeyboardButton('Project Channel', url='https://t.me/xTeamBots'),
+        InlineKeyboardButton('- ملفات السورس .', url='https://github.com/Devmhmd/TikTokDL'),
+        InlineKeyboardButton('- قناة السورس .', url='https://t.me/xTeamBots'),
     ],
-    [InlineKeyboardButton('Author', url='https://t.me/xgorn')],
+    [InlineKeyboardButton('- المطور .', url='https://t.me/xgorn')],
 ]
 
 DL_BUTTONS=[
     [
-        InlineKeyboardButton('No Watermark', callback_data='nowm'),
-        InlineKeyboardButton('Watermark', callback_data='wm'),
+        InlineKeyboardButton('- بدون علامه مائيه .', callback_data='nowm'),
+        InlineKeyboardButton('- علامه مائيه .', callback_data='wm'),
     ],
-    [InlineKeyboardButton('Audio', callback_data='audio')],
+    [InlineKeyboardButton('- الساوند .', callback_data='audio')],
 ]
 
 
@@ -49,7 +49,7 @@ async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
 # Start
 @xbot.on_message(filters.command('start') & filters.private)
 async def _start(bot, update):
-  await update.reply_text(f"I'm TikTokDL!\nYou can download tiktok video/audio using this bot", True, reply_markup=InlineKeyboardMarkup(START_BUTTONS))
+  await update.reply_text(f"** مرحبا أنا بوت تحميل من التيكتوك يمكنك تحميل الفيديوهات او المقاطع الصوتية من هنا فقط ارسل رابط المقطع هنا**",
 
 # Downloader for tiktok
 @xbot.on_message(filters.regex(pattern='.*http.*') & filters.private)
@@ -59,7 +59,7 @@ async def _tiktok(bot, update):
   resp = session.head(url, allow_redirects=True)
   if not 'tiktok.com' in resp.url:
     return
-  await update.reply('Select the options below', True, reply_markup=InlineKeyboardMarkup(DL_BUTTONS))
+  await update.reply('- اختار صيغه التحميل .', True, reply_markup=InlineKeyboardMarkup(DL_BUTTONS))
 
 # Callbacks
 @xbot.on_callback_query()
