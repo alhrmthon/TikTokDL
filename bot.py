@@ -13,9 +13,9 @@ downloads = './downloads/{}/'
 START_BUTTONS=[
     [
         InlineKeyboardButton('- ملفات السورس .', url='https://github.com/Devmhmd/TikTokDL'),
-        InlineKeyboardButton('- قناة السورس .', url='https://t.me/xTeamBots'),
+        InlineKeyboardButton('- قناة السورس .', url='https://t.me/APP_YOUTUBE'),
     ],
-    [InlineKeyboardButton('- المطور .', url='https://t.me/xgorn')],
+    [InlineKeyboardButton('- المطور .', url='https://t.me/APP_YOUTUBE')],
 ]
 
 DL_BUTTONS=[
@@ -49,7 +49,7 @@ async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
 # Start
 @xbot.on_message(filters.command('start') & filters.private)
 async def _start(bot, update):
-  await update.reply_text(f"** مرحبا أنا بوت تحميل من التيكتوك يمكنك تحميل الفيديوهات او المقاطع الصوتية من هنا فقط ارسل رابط المقطع هنا**", True, reply_markup=InlineKeyboardMarkup(START_BUTTONS))
+  await update.reply_text(f"__**- اهلا بك عزيزي .\n- انا بوت تحميل من تك توك .\n- ارسل رابط المقطع المراد تنزيله .\n- ثم اختار صيغه التحميل .**__", True, reply_markup=InlineKeyboardMarkup(START_BUTTONS))
 
 # Downloader for tiktok
 @xbot.on_message(filters.regex(pattern='.*http.*') & filters.private)
